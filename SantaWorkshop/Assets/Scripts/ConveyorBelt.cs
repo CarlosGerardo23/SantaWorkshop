@@ -75,4 +75,6 @@ public class ConveyorBelt : MonoBehaviour
 
 		objectOnBelt.collider.transform.position = newPos;
     }
+
+ 
 }
