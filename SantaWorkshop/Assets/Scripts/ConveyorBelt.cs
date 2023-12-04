@@ -16,6 +16,8 @@ public class ConveyorBelt : MonoBehaviour
 
 	[SerializeField]
 	private float TEST_Speed = 1.0f;
+	[SerializeField]
+	private float TEST_Speed_Material = 1.0f;
 
 	private void Update()
 	{
@@ -28,7 +30,7 @@ public class ConveyorBelt : MonoBehaviour
 		// move the tex coords to simulate belt scrolling
 		// TODO: remove when animation exists
 		Vector2 newOffset = beltRenderer.material.mainTextureOffset;
-		float offsetMagnitude = TEST_Speed * Time.deltaTime;
+		float offsetMagnitude = TEST_Speed_Material * Time.deltaTime;
 
 		switch (ConveyorBeltDirection)
 		{
