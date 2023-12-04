@@ -272,12 +272,17 @@ PrefabInstance:
     - target: {fileID: 1234918226551463814, guid: 2a2018546e6d9ce4b8d30f3c76fce836,
         type: 3}
       propertyPath: TEST_Speed
-      value: 2
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1234918226551463814, guid: 2a2018546e6d9ce4b8d30f3c76fce836,
+        type: 3}
+      propertyPath: TEST_Speed_Material
+      value: -0.09
       objectReference: {fileID: 0}
     - target: {fileID: 1234918226551463814, guid: 2a2018546e6d9ce4b8d30f3c76fce836,
         type: 3}
       propertyPath: ConveyorBeltDirection
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4325641132794224535, guid: 2a2018546e6d9ce4b8d30f3c76fce836,
         type: 3}
