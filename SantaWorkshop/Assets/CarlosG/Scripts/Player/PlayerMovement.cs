@@ -9,10 +9,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _characterMovementVelocity = 2f;
     [SerializeField] private float _characterRotationVelocity = 0.1f;
     private CharacterController _characterController;
+    [SerializeField] private Animator playerAnimator;
+
     private Vector3 _currentMovement;
     private void Start()
     {
         _characterController = GetComponent<CharacterController>();
+
+        
     }
     private void OnEnable()
     {
@@ -25,8 +29,13 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
+        playerAnimator.SetBool("isRunning", false);
+        playerAnimator.SetBool("isIdle", true);
+
         if (_currentMovement != Vector3.zero)
         {
+            playerAnimator.SetBool("isRunning", true);
+            playerAnimator.SetBool("isIdle", false);
             _characterController.Move(_currentMovement * Time.deltaTime * _characterMovementVelocity);
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(_currentMovement), _characterRotationVelocity);
         }

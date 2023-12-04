@@ -17,6 +17,7 @@ public class ToyInteractable : IInteractable
         if (_isTaken)
         {
             _rigidBody.useGravity = true;
+            _rigidBody.isKinematic = false;
             _isTaken = false;
             _meshRenderer.enabled = true;
             transform.SetParent(null);
@@ -26,8 +27,9 @@ public class ToyInteractable : IInteractable
         {
 
             _rigidBody.useGravity = false;
+            _rigidBody.isKinematic = true;
             _isTaken = true;
-            _meshRenderer.enabled = false;
+            _meshRenderer.enabled = true;
             transform.SetParent(player.DropPoint);
             transform.localPosition = Vector3.zero;
         }
