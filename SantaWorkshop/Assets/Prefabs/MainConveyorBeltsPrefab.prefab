@@ -377,7 +377,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 851984592612905929}
-  m_Layer: 0
+  - component: {fileID: 8729722318355636639}
+  m_Layer: 7
   m_Name: MainConveyorBeltsPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -403,6 +404,27 @@ Transform:
   - {fileID: 7466020027976934488}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8729722318355636639
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4325641132794224535}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 26.8, y: 8.2, z: 3.1}
+  m_Center: {x: 16.25, y: 5.42, z: 6.25}
 --- !u!1 &5529785344662456092
 GameObject:
   m_ObjectHideFlags: 0
