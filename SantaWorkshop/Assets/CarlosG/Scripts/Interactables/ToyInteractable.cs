@@ -14,14 +14,21 @@ public class ToyInteractable : IInteractable
     }
     public override void Interact(PlayerInteractionController player)
     {
-        if (_isTaken)
+        PlayerGrabController playerGrab = player.GetComponent<PlayerGrabController>();
+
+        if (playerGrab.isGrabbing)
         {
-            _rigidBody.useGravity = true;
-            _rigidBody.isKinematic = false;
-            _isTaken = false;
-            _meshRenderer.enabled = true;
-            transform.SetParent(null);
-            transform.localPosition = player.DropPoint.position;
+            if (playerGrab.IsGrabbingInteractable(this))
+            {
+                _rigidBody.useGravity = true;
+                _rigidBody.isKinematic = false;
+                _isTaken = false;
+                _meshRenderer.enabled = true;
+                transform.SetParent(null);
+                transform.localPosition = player.DropPoint.position;
+                playerGrab.isGrabbing = false;
+                playerGrab.objectInteractable = null;
+            }
         }
         else
         {
@@ -32,7 +39,11 @@ public class ToyInteractable : IInteractable
             _meshRenderer.enabled = true;
             transform.SetParent(player.DropPoint);
             transform.localPosition = Vector3.zero;
+            playerGrab.isGrabbing = true;
+            playerGrab.objectInteractable = this;
+
         }
+
         Debug.Log("I'm a toy");
     }
 
