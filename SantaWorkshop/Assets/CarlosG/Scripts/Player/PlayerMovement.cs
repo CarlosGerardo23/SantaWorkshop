@@ -30,16 +30,16 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
-        playerAnimator.transform.position = new Vector3 (transform.position.x, 0, transform.position.z);
-        playerAnimator.SetBool("isRunning", false);
-        playerAnimator.SetBool("isIdle", true);
+       // playerAnimator.transform.position = new Vector3 (transform.position.x, 0, transform.position.z);
+        playerAnimator?.SetBool("isRunning", false);
+        playerAnimator?.SetBool("isIdle", true);
         if (!IsFalling())
         {
 
             if (_currentMovement != Vector3.zero)
             {
-                playerAnimator.SetBool("isRunning", true);
-                playerAnimator.SetBool("isIdle", false);
+                playerAnimator?.SetBool("isRunning", true);
+                playerAnimator?.SetBool("isIdle", false);
                 _characterController.Move(_currentMovement * Time.deltaTime * _characterMovementVelocity);
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(_currentMovement), _characterRotationVelocity);
             }
