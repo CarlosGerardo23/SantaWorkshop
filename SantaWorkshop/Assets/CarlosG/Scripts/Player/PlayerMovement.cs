@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
-       // playerAnimator.transform.position = new Vector3 (transform.position.x, 0, transform.position.z);
+       // playerAnimator.transform.localPosition = new Vector3(transform.position.x, -1.558823f, transform.position.z);
         playerAnimator?.SetBool("isRunning", false);
         playerAnimator?.SetBool("isIdle", true);
         if (!IsFalling())

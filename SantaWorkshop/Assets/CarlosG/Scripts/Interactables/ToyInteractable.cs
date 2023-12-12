@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ToyInteractable : IInteractable
 {
+    [SerializeField] private ToyPartDataSO _toyPartData;
+    public ToyPartDataSO ToyPartData => _toyPartData;
     private bool _isTaken;
     private MeshRenderer _meshRenderer;
     private Rigidbody _rigidBody;
