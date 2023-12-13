@@ -131,7 +131,7 @@ Transform:
   m_GameObject: {fileID: 383551746620263965}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0}
+  m_LocalPosition: {x: 0, y: -1.44, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -150,9 +150,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toyParts:
+  - {fileID: 8824717777641587284, guid: 5dcdd195311ee4542b0f8239aedaaeaa, type: 3}
+  - {fileID: 8824717777641587284, guid: ecaea9ef056234c4d98397bb8b27a1ba, type: 3}
+  - {fileID: 8824717777641587284, guid: 58e4aeb6fed8b497ca9e859060dcf4ca, type: 3}
+  - {fileID: 8824717777641587284, guid: 10c956a6bbaa647acb6d4ba08ea483bc, type: 3}
+  - {fileID: 4876135160104122665, guid: 88709dfd9644d46c4aaeeb49cff9f24f, type: 3}
+  - {fileID: 4776007622983583966, guid: d22760bba9780408b8693c066f1abdc8, type: 3}
   - {fileID: 6689897565802709456, guid: 99f17a1b38d1a4059b37745eeea9c05a, type: 3}
-  - {fileID: 3508858011180076427, guid: 80075cbfb6e9c4d0f8e5b78142ae4887, type: 3}
-  - {fileID: 1782948893693540810, guid: 3069ad832db9a4463b2b79e8253f13ad, type: 3}
+  - {fileID: 6689897565802709456, guid: 99f17a1b38d1a4059b37745eeea9c05a, type: 3}
+  - {fileID: 6689897565802709456, guid: 99f17a1b38d1a4059b37745eeea9c05a, type: 3}
+  - {fileID: 6689897565802709456, guid: 99f17a1b38d1a4059b37745eeea9c05a, type: 3}
   spawnRate: 10
   AvailableToys: []
 --- !u!1 &760928555796342904
@@ -454,7 +461,7 @@ Transform:
   m_GameObject: {fileID: 5529785344662456092}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.770023, y: 8.277983, z: 6.322668}
+  m_LocalPosition: {x: 4.770023, y: 10.86, z: 6.322668}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
