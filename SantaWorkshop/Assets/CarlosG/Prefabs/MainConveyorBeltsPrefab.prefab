@@ -160,7 +160,7 @@ MonoBehaviour:
   - {fileID: 6689897565802709456, guid: 99f17a1b38d1a4059b37745eeea9c05a, type: 3}
   - {fileID: 6689897565802709456, guid: 99f17a1b38d1a4059b37745eeea9c05a, type: 3}
   - {fileID: 6689897565802709456, guid: 99f17a1b38d1a4059b37745eeea9c05a, type: 3}
-  spawnRate: 10
+  spawnRate: 5
   AvailableToys: []
 --- !u!1 &760928555796342904
 GameObject:
