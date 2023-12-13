@@ -201,6 +201,7 @@ GameObject:
   - component: {fileID: 7656387891606519809}
   - component: {fileID: 1282340176301485990}
   - component: {fileID: 2937527640061818560}
+  - component: {fileID: 4553589671718794192}
   m_Layer: 0
   m_Name: Glue
   m_TagString: Untagged
@@ -325,6 +326,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &4553589671718794192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4876135160104122665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 749455186b362504a92a37c114df332e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _toyPartData: {fileID: 0}
 --- !u!1 &5486983720710664210
 GameObject:
   m_ObjectHideFlags: 0
