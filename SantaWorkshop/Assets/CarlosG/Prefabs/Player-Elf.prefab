@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inputReader: {fileID: 11400000, guid: 80b48c8e84a9acc44be5cddb44c86cb9, type: 2}
-  _characterMovementVelocity: 4
+  _characterMovementVelocity: 6
   _characterRotationVelocity: 1
   playerAnimator: {fileID: 5408695263326522218}
   _gravity: 0
