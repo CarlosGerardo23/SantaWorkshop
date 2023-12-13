@@ -133,7 +133,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -738,6 +738,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7974307456398705930}
     m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 3703dca2933d3664cb57dabe4b6b51ca,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3703dca2933d3664cb57dabe4b6b51ca,
         type: 3}
       propertyPath: m_LocalPosition.x
