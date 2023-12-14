@@ -6,12 +6,13 @@ using UnityEngine;
 public class WorkStationController : IInteractable
 {
     [SerializeField] private RecipeDataSO _recipe;
+    [SerializeField] private Transform _toysParent;
     private PlayerInteractionController _playerController;
     private UIWorkStationController _uiWorkStation;
     private bool _isReady;
     private void Start()
     {
-        _uiWorkStation= GetComponentInChildren<UIWorkStationController>();
+        _uiWorkStation = GetComponentInChildren<UIWorkStationController>();
         _uiWorkStation.SetRecipe(_recipe);
     }
     private void OnEnable()
@@ -24,9 +25,14 @@ public class WorkStationController : IInteractable
     }
     public override void Interact(PlayerInteractionController player)
     {
-        if (_isReady)
+        if (_recipe.IsRecipeDone())
         {
             _isReady = false;
+            GameObject toy = _recipe.CreateToy();
+            toy.transform.localScale = Vector3.one;
+            toy.transform.SetParent(_toysParent);
+            toy.transform.localPosition = Vector3.zero;
+
             Debug.Log("Recipe is done");
         }
     }
@@ -43,6 +49,7 @@ public class WorkStationController : IInteractable
                 toy.Interact(_playerController);
                 Debug.Log($"Check succes {toy.ToyPartData.Name}");
                 toy.gameObject.SetActive(false);
+                Destroy(toy, 0.3f);
                 if (_recipe.IsRecipeDone())
                 {
                     _isReady = true;

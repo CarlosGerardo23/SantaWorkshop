@@ -1,29 +1,65 @@
 fileFormatVersion: 2
 guid: de083115bd03c4871b51d44540d1fad5
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: Lowpoly_Christmas_Pack_011:pCube1
-    100004: Lowpoly_Christmas_Pack_011:pCube2
-    100006: Lowpoly_Christmas_Pack_011:pCube3
-    100008: Lowpoly_Christmas_Pack_011:transform1
-    100010: Lowpoly_Christmas_Pack_011:transform2
-    400000: //RootNode
-    400002: Lowpoly_Christmas_Pack_011:pCube1
-    400004: Lowpoly_Christmas_Pack_011:pCube2
-    400006: Lowpoly_Christmas_Pack_011:pCube3
-    400008: Lowpoly_Christmas_Pack_011:transform1
-    400010: Lowpoly_Christmas_Pack_011:transform2
-    2100000: Lowpoly_Christmas_Pack_011_phong1
-    2100002: Lowpoly_Christmas_Pack_011_phong2
-    2300000: Lowpoly_Christmas_Pack_011:pCube3
-    3300000: Lowpoly_Christmas_Pack_011:pCube3
-    4300000: Lowpoly_Christmas_Pack_011:pCube3
-    6400000: Lowpoly_Christmas_Pack_011:pCube3
+  serializedVersion: 22200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: Lowpoly_Christmas_Pack_011:pCube1
+  - first:
+      1: 100004
+    second: Lowpoly_Christmas_Pack_011:pCube2
+  - first:
+      1: 100006
+    second: Lowpoly_Christmas_Pack_011:pCube3
+  - first:
+      1: 100008
+    second: Lowpoly_Christmas_Pack_011:transform1
+  - first:
+      1: 100010
+    second: Lowpoly_Christmas_Pack_011:transform2
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: Lowpoly_Christmas_Pack_011:pCube1
+  - first:
+      4: 400004
+    second: Lowpoly_Christmas_Pack_011:pCube2
+  - first:
+      4: 400006
+    second: Lowpoly_Christmas_Pack_011:pCube3
+  - first:
+      4: 400008
+    second: Lowpoly_Christmas_Pack_011:transform1
+  - first:
+      4: 400010
+    second: Lowpoly_Christmas_Pack_011:transform2
+  - first:
+      21: 2100000
+    second: Lowpoly_Christmas_Pack_011_phong1
+  - first:
+      21: 2100002
+    second: Lowpoly_Christmas_Pack_011_phong2
+  - first:
+      23: 2300000
+    second: Lowpoly_Christmas_Pack_011:pCube3
+  - first:
+      33: 3300000
+    second: Lowpoly_Christmas_Pack_011:pCube3
+  - first:
+      43: 4300000
+    second: Lowpoly_Christmas_Pack_011:pCube3
+  - first:
+      64: 6400000
+    second: Lowpoly_Christmas_Pack_011:pCube3
   externalObjects: {}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -32,6 +68,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -52,29 +89,40 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 100
     meshCompression: 0
     addColliders: 1
     useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -83,10 +131,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -96,13 +144,19 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 0
   humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

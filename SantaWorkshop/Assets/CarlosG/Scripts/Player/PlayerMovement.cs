@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform[] _feets;
     [SerializeField] private float _feetDistance;
     private float _yVelocity = 0;
+    private Vector3 _rotation;
     private Vector3 _currentMovement;
     private void Start()
     {
@@ -30,26 +31,26 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
-       // playerAnimator.transform.localPosition = new Vector3(transform.position.x, -1.558823f, transform.position.z);
+        // playerAnimator.transform.localPosition = new Vector3(transform.position.x, -1.558823f, transform.position.z);
         playerAnimator?.SetBool("isRunning", false);
         playerAnimator?.SetBool("isIdle", true);
-        if (!IsFalling())
-        {
 
-            if (_currentMovement != Vector3.zero)
-            {
-                playerAnimator?.SetBool("isRunning", true);
-                playerAnimator?.SetBool("isIdle", false);
-                _characterController.Move(_currentMovement * Time.deltaTime * _characterMovementVelocity);
-                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(_currentMovement), _characterRotationVelocity);
-            }
+        CheckFalling();
+        if (_currentMovement != Vector3.zero)
+        {
+            playerAnimator?.SetBool("isRunning", true);
+            playerAnimator?.SetBool("isIdle", false);
+            _characterController.Move(_currentMovement * Time.deltaTime * _characterMovementVelocity);
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(_rotation), _characterRotationVelocity);
         }
+
     }
     private void OnMove(Vector2 movement)
     {
         _currentMovement = new Vector3(movement.x, 0, movement.y).normalized;
+        _rotation=_currentMovement;
     }
-    private bool IsFalling()
+    private void CheckFalling()
     {
         _yVelocity = 0;
         foreach (var feet in _feets)
@@ -64,15 +65,15 @@ public class PlayerMovement : MonoBehaviour
                 _yVelocity += _gravity * Time.deltaTime;
                 rayDestination = feet.TransformDirection(-Vector3.up) * _feetDistance;
                 Debug.DrawLine(feet.position, feet.position + rayDestination, Color.red);
-                break;
+
             }
             else
                 _yVelocity = 0;
-
-            _characterController.Move(new Vector3(0, _yVelocity, 0));
+            //   _characterController.Move(new Vector3(0, _yVelocity, 0));
         }
+        _currentMovement = new Vector3(_currentMovement.x, _yVelocity, _currentMovement.z);
 
-        return _yVelocity != 0;
+
 
     }
 }
