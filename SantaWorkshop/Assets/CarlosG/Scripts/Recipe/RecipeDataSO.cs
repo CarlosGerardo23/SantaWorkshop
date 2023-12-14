@@ -27,7 +27,7 @@ public class RecipeDataSO : ScriptableObject
         {
             if (data.Name == _toyPartsList[i].Name)
             {
-                data.isSet=true;
+                data.isSet = true;
                 return true;
             }
         }
@@ -37,5 +37,18 @@ public class RecipeDataSO : ScriptableObject
     public GameObject CreateToy()
     {
         return Instantiate(_prefabToy);
+    }
+    public bool TryGetToyByIndex(int index, out ToyPartDataSO toy)
+    {
+        toy = null;
+        try
+        {
+            toy = _toyPartsList[index];
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
     }
 }

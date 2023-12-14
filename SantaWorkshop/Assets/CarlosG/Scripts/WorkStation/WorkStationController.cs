@@ -7,7 +7,13 @@ public class WorkStationController : IInteractable
 {
     [SerializeField] private RecipeDataSO _recipe;
     private PlayerInteractionController _playerController;
+    private UIWorkStationController _uiWorkStation;
     private bool _isReady;
+    private void Start()
+    {
+        _uiWorkStation= GetComponentInChildren<UIWorkStationController>();
+        _uiWorkStation.SetRecipe(_recipe);
+    }
     private void OnEnable()
     {
         _playerController = FindObjectOfType<PlayerInteractionController>();
@@ -33,6 +39,7 @@ public class WorkStationController : IInteractable
         {
             if (_recipe.TryCheckItemRecipe(toy.ToyPartData))
             {
+                _uiWorkStation.UpdateRecipeUI(toy.ToyPartData.Name);
                 toy.Interact(_playerController);
                 Debug.Log($"Check succes {toy.ToyPartData.Name}");
                 toy.gameObject.SetActive(false);
