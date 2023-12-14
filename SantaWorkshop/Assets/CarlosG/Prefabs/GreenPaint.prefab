@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: -5395245235115648895}
   m_Layer: 0
   m_Name: GreenPaint
-  m_TagString: Untagged
+  m_TagString: GreenPaint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
