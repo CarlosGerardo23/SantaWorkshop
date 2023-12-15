@@ -146,4 +146,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 749455186b362504a92a37c114df332e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _toyPartData: {fileID: 11400000, guid: 2d22374f4e01f52409536c175219ae55, type: 2}
+  _toyPartData: {fileID: 11400000, guid: abc2815ba1433544886fd8c9aef09e86, type: 2}
