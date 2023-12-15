@@ -7,6 +7,7 @@ public class WorkStationController : IInteractable
 {
     [SerializeField] private RecipeDataSO _recipe;
     [SerializeField] private Transform _toysParent;
+    [SerializeField] private string _giftTag;
     private PlayerInteractionController _playerController;
     private UIWorkStationController _uiWorkStation;
     private bool _isReady;
@@ -39,7 +40,7 @@ public class WorkStationController : IInteractable
 
     private void OnTriggerEnter(Collider other)
     {
-        if (_isReady)
+        if (_isReady|| other.CompareTag(_giftTag))
             return;
         if (other.TryGetComponent(out ToyInteractable toy))
         {

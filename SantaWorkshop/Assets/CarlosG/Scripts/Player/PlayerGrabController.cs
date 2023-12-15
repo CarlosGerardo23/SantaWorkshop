@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerGrabController : MonoBehaviour
 {
-    [HideInInspector] public bool isGrabbing;
     [HideInInspector] public IInteractable objectInteractable;
+    public bool IsGrabbing => objectInteractable != null;
 
     public bool IsGrabbingInteractable(IInteractable interactable)
     {
