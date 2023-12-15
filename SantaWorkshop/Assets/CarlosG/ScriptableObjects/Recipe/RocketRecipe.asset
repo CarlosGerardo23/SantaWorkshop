@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39fb00d5dedbe9240869dad89d20b2bb, type: 3}
   m_Name: RocketRecipe
   m_EditorClassIdentifier: 
-  _toyPartsList: []
-  _prefabToy: {fileID: 0}
-  _giftIcon: {fileID: 0}
+  _toyPartsList:
+  - {fileID: 11400000, guid: c7cf419854ba5504683e4de279d77485, type: 2}
+  - {fileID: 11400000, guid: 6a7b4ba432a54cf418ca5fc531f008c1, type: 2}
+  - {fileID: 11400000, guid: 1c251832dc059f54e8308ea2ee1c90f0, type: 2}
+  - {fileID: 11400000, guid: abc2815ba1433544886fd8c9aef09e86, type: 2}
+  _prefabToy: {fileID: 6279549868151239179, guid: 052a289b1639e411badc15e1262f8875,
+    type: 3}
+  _giftIcon: {fileID: 21300000, guid: 2c7aa6604a91746f78b1a83dd7bd8373, type: 3}
