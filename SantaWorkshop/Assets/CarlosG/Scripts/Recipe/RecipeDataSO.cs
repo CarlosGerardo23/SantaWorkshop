@@ -6,6 +6,7 @@ public class RecipeDataSO : ScriptableObject
 {
     [SerializeField] private ToyPartDataSO[] _toyPartsList;
     [SerializeField] private GameObject _prefabToy;
+    [SerializeField] private Sprite _giftIcon;
     public bool IsRecipeDone()
     {
         for (int i = 0; i < _toyPartsList.Length; i++)
