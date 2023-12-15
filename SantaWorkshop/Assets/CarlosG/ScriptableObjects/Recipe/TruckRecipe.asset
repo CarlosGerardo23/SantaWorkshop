@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: TruckRecipe
   m_EditorClassIdentifier: 
   _toyPartsList: []
-  _prefabToy: {fileID: 0}
-  _giftIcon: {fileID: 0}
+  _prefabToy: {fileID: 7663895283594857925, guid: bf2c4480d3c180e4fbb28456f7df7888,
+    type: 3}
+  _giftIcon: {fileID: 21300000, guid: e1d0bb68ec19c47a8b6b72c7e5adba1a, type: 3}

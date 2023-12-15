@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: RocketRecipe
   m_EditorClassIdentifier: 
   _toyPartsList: []
-  _prefabToy: {fileID: 0}
-  _giftIcon: {fileID: 0}
+  _prefabToy: {fileID: 7663895283594857925, guid: bf2c4480d3c180e4fbb28456f7df7888,
+    type: 3}
+  _giftIcon: {fileID: 21300000, guid: 2c7aa6604a91746f78b1a83dd7bd8373, type: 3}
