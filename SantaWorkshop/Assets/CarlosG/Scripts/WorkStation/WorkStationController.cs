@@ -11,7 +11,7 @@ public class WorkStationController : IInteractable
     private PlayerInteractionController _playerController;
     private UIWorkStationController _uiWorkStation;
     private bool _isReady;
-    private RecipeDataSO _currentRecipe;
+    [SerializeField] private RecipeDataSO _currentRecipe;
 
     private void Start()
     {
