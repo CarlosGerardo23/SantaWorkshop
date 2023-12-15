@@ -5,10 +5,14 @@ using UnityEngine;
 
 public class PlayerScoreController : MonoBehaviour
 {
-   [SerializeField] private string _giftTag;
+    [SerializeField] private string _giftTag;
+    private int _currentScore = 0;
 
-   private void OnTriggerEnter(Collider other)
-   {
-    
-   }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag(_giftTag))
+        {
+
+        }
+    }
 }
