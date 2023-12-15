@@ -5,16 +5,19 @@ using UnityEngine;
 
 public class WorkStationController : IInteractable
 {
-    [SerializeField] private RecipeDataSO _recipe;
+    [SerializeField] private RecipeDataSO[] _recipe;
     [SerializeField] private Transform _toysParent;
     [SerializeField] private string _giftTag;
     private PlayerInteractionController _playerController;
     private UIWorkStationController _uiWorkStation;
     private bool _isReady;
+    [SerializeField] private RecipeDataSO _currentRecipe;
+
     private void Start()
     {
         _uiWorkStation = GetComponentInChildren<UIWorkStationController>();
-        _uiWorkStation.SetRecipe(_recipe);
+        _currentRecipe = _recipe[Random.Range(0, _recipe.Length)];
+        _uiWorkStation.SetRecipe(_currentRecipe);
     }
     private void OnEnable()
     {
@@ -22,14 +25,14 @@ public class WorkStationController : IInteractable
     }
     private void OnDisable()
     {
-        _recipe.ResetRecipe();
+        _currentRecipe.ResetRecipe();
     }
     public override void Interact(PlayerInteractionController player)
     {
-        if (_recipe.IsRecipeDone())
+        if (_currentRecipe.IsRecipeDone())
         {
             _isReady = false;
-            GameObject toy = _recipe.CreateToy();
+            GameObject toy = _currentRecipe.CreateToy();
             toy.transform.localScale = Vector3.one;
             toy.transform.SetParent(_toysParent);
             toy.transform.localPosition = Vector3.zero;
@@ -44,14 +47,14 @@ public class WorkStationController : IInteractable
             return;
         if (other.TryGetComponent(out ToyInteractable toy))
         {
-            if (_recipe.TryCheckItemRecipe(toy.ToyPartData))
+            if (_currentRecipe.TryCheckItemRecipe(toy.ToyPartData))
             {
                 _uiWorkStation.UpdateRecipeUI(toy.ToyPartData.Name);
                 toy.Interact(_playerController);
                 Debug.Log($"Check succes {toy.ToyPartData.Name}");
                 toy.gameObject.SetActive(false);
                 Destroy(toy, 0.3f);
-                if (_recipe.IsRecipeDone())
+                if (_currentRecipe.IsRecipeDone())
                 {
                     _isReady = true;
                     Debug.Log("Is ready to create a toy");
