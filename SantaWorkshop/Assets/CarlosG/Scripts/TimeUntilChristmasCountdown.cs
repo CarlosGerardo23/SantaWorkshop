@@ -37,5 +37,10 @@ public class TimeUntilChristmasCountdown : MonoBehaviour
             outOfTime.enabled = true;
             Debug.Log("Time has run out!");
         }
+        
+        if (totalTime <= 10)
+        {
+            countdownTimerText.color = Color.red;
+        }
     }
 }
