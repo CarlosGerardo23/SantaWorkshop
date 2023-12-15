@@ -21,8 +21,11 @@ public class UIWorkStationController : MonoBehaviour
             {
                 _icons[i].color = Color.white;
                 _icons[i].sprite = toy.Icon;
-                _currentRecipeDataUI.Add(toy.Name, _icons[i]);
-                
+
+                if (!_currentRecipeDataUI.ContainsKey(toy.Name))
+                {
+                    _currentRecipeDataUI.Add(toy.Name, _icons[i]);
+                }
             }
         }
 
