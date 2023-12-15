@@ -17,5 +17,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: abc2815ba1433544886fd8c9aef09e86, type: 2}
   - {fileID: 11400000, guid: b3529033668c2af4b95c57d1dcaaa906, type: 2}
   - {fileID: 11400000, guid: eea44c512b2ca9342b1d7c72b9d29ac6, type: 2}
-  _prefabToy: {fileID: 142898, guid: 2c69c93d45f9449488dbb88be91cd0a5, type: 3}
+  _prefabToy: {fileID: 7663895283594857925, guid: bf2c4480d3c180e4fbb28456f7df7888,
+    type: 3}
   _giftIcon: {fileID: 21300000, guid: 15c187e5547694a478b9404df4f7ad89, type: 3}
