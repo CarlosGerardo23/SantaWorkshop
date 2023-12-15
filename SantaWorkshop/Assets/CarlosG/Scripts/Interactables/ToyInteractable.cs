@@ -18,7 +18,7 @@ public class ToyInteractable : IInteractable
     {
         PlayerGrabController playerGrab = player.GetComponent<PlayerGrabController>();
 
-        if (playerGrab.isGrabbing)
+        if (playerGrab.IsGrabbing)
         {
             if (playerGrab.IsGrabbingInteractable(this))
             {
@@ -28,7 +28,6 @@ public class ToyInteractable : IInteractable
                 _meshRenderer.enabled = true;
                 transform.SetParent(null);
                 transform.localPosition = player.DropPoint.position;
-                playerGrab.isGrabbing = false;
                 playerGrab.objectInteractable = null;
             }
         }
@@ -41,7 +40,6 @@ public class ToyInteractable : IInteractable
             _meshRenderer.enabled = true;
             transform.SetParent(player.DropPoint);
             transform.localPosition = Vector3.zero;
-            playerGrab.isGrabbing = true;
             playerGrab.objectInteractable = this;
 
         }

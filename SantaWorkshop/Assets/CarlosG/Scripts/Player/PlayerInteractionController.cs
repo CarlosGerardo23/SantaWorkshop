@@ -27,7 +27,7 @@ public class PlayerInteractionController : MonoBehaviour
     }
     private void Interact()
     {
-        if (_playerGrab.isGrabbing)
+        if (_playerGrab.IsGrabbing)
             _playerGrab.objectInteractable.Interact(this);
         else
             _currentInteractable?.Interact(this);

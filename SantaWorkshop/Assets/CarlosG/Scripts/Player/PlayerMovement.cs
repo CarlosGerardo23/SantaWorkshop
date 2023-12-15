@@ -48,15 +48,15 @@ public class PlayerMovement : MonoBehaviour
     private void OnMove(Vector2 movement)
     {
         _currentMovement = new Vector3(movement.x, 0, movement.y).normalized;
-        _rotation=_currentMovement;
+        _rotation = _currentMovement;
     }
     private void CheckFalling()
     {
         _yVelocity = 0;
         foreach (var feet in _feets)
         {
-            Debug.Log("Feets Position: " + feet.position);
-            Debug.Log("Ray Destination: " + (-feet.transform.up * _feetDistance));
+            //  Debug.Log("Feets Position: " + feet.position);
+            //Debug.Log("Ray Destination: " + (-feet.transform.up * _feetDistance));
             Vector3 rayDestination = feet.TransformDirection(-Vector3.up) * _feetDistance;
             Debug.DrawLine(feet.position, feet.position + rayDestination, Color.green);
             Ray ray = new Ray(feet.position, -feet.transform.up);
