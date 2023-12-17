@@ -32,10 +32,12 @@ public class CameraScript : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		if (Mathf.Abs(rotationAngle) > 0.0f)
+		/*if (Mathf.Abs(rotationAngle) > 0.0f)
 		{
 			playerCamera.transform.RotateAround(player.transform.position, Vector3.up, Time.deltaTime * rotationAngle * rotateSpeed);
-		}
+		}*/
+
+		transform.position = player.transform.position + offset;
 	}
 
 	void RotateCamera(float rotationDirection)
