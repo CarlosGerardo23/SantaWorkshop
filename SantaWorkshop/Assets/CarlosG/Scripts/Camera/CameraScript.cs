@@ -30,15 +30,15 @@ public class CameraScript : MonoBehaviour
 		inputReader.OnZoomEvent -= ZoomCamera;
 	}
 
-	private void FixedUpdate()
+	private void Update()
 	{
-		/*if (Mathf.Abs(rotationAngle) > 0.0f)
-		{
-			playerCamera.transform.RotateAround(player.transform.position, Vector3.up, Time.deltaTime * rotationAngle * rotateSpeed);
-		}*/
+		// Update the camera's position based on player's position and adjusted offset
+		transform.position = player.transform.position + offset * zoomScale;
 
-		transform.position = player.transform.position + offset;
+		// Ensure the camera is always looking at the player
+		transform.LookAt(player.transform);
 	}
+
 
 	void RotateCamera(float rotationDirection)
     {
@@ -51,19 +51,12 @@ public class CameraScript : MonoBehaviour
 	/// <param name="mouseScroll"></param>
 	void ZoomCamera(Vector2 mouseScroll)
 	{
-		if (mouseScroll.y > 0)
-		{
-			zoomScale -= Time.deltaTime * zoomSpeed;
-			if (zoomScale < zoomMin)
-				zoomScale = zoomMin;
-		}
-		else if (mouseScroll.y < 0)
-		{
-			zoomScale += Time.deltaTime * zoomSpeed;
-			if (zoomScale > zoomMax)
-				zoomScale = zoomMax;
-		}
+		float zoomDelta = mouseScroll.y * Time.deltaTime * zoomSpeed;
 
-		//transform.position = new Vector3(transform.position.x, offset.y * zoomScale, offset.z * zoomScale);
+		zoomScale += zoomDelta;
+		zoomScale = Mathf.Clamp(zoomScale, zoomMin, zoomMax);
+
+		// Adjust the camera's position based on zoom
+		transform.position = new Vector3(transform.position.x, offset.y * zoomScale, offset.z * zoomScale);
 	}
 }
