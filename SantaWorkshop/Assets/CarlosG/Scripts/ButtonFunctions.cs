@@ -4,11 +4,18 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ButtonFunctions : MonoBehaviour
 {
+
     public AudioMixer audioMixer;
+    public Slider volumeSlider;
     public GameObject PausePanel;
+    public GameObject TitlePanel;
+    public GameObject OptionPanel;
+   
+    
     public static bool GameIsPaused = false;
     
     void Update()
@@ -24,6 +31,8 @@ public class ButtonFunctions : MonoBehaviour
                 Pause();
             }
         }
+
+        
     }
     
     public void StartGame()
@@ -31,9 +40,10 @@ public class ButtonFunctions : MonoBehaviour
         SceneManager.LoadScene(1);
     }
     
-    public void SetVolume(float volume)
+    public void SetVolume()
     {
-        audioMixer.SetFloat("volume", volume);
+        
+        audioMixer.SetFloat("volume", volumeSlider.value);
     }
     
     public void QuitGame()
@@ -54,6 +64,12 @@ public class ButtonFunctions : MonoBehaviour
         PausePanel.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+    }
+
+    public void Back()
+    {
+        OptionPanel.SetActive(false);
+        TitlePanel.SetActive(true);
     }
     
 
