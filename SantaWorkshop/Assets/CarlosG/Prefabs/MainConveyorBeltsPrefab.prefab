@@ -157,9 +157,6 @@ MonoBehaviour:
   - {fileID: 4876135160104122665, guid: 88709dfd9644d46c4aaeeb49cff9f24f, type: 3}
   - {fileID: 4776007622983583966, guid: d22760bba9780408b8693c066f1abdc8, type: 3}
   - {fileID: 6689897565802709456, guid: 99f17a1b38d1a4059b37745eeea9c05a, type: 3}
-  - {fileID: 6689897565802709456, guid: 99f17a1b38d1a4059b37745eeea9c05a, type: 3}
-  - {fileID: 6689897565802709456, guid: 99f17a1b38d1a4059b37745eeea9c05a, type: 3}
-  - {fileID: 6689897565802709456, guid: 99f17a1b38d1a4059b37745eeea9c05a, type: 3}
   spawnRate: 5
   AvailableToys: []
 --- !u!1 &760928555796342904
