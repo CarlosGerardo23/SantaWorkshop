@@ -72,5 +72,12 @@ public class ButtonFunctions : MonoBehaviour
         TitlePanel.SetActive(true);
     }
     
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
+        Time.timeScale = 1f;
+        GameIsPaused = false;
+
+    }
 
 }
