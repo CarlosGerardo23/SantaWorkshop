@@ -9,7 +9,7 @@ public class TimeUntilChristmasCountdown : MonoBehaviour
 
 [SerializeField] private float totalTime = 300f;
 [SerializeField] private TextMeshProUGUI countdownTimerText;
-[SerializeField] private TextMeshProUGUI outOfTime;
+[SerializeField] private GameObject outOfTime;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +34,7 @@ public class TimeUntilChristmasCountdown : MonoBehaviour
         if (totalTime <= 0)
         {
             totalTime = 0;
-            outOfTime.enabled = true;
+            outOfTime.SetActive(true);
             Debug.Log("Time has run out!");
         }
         
