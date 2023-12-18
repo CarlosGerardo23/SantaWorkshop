@@ -159,6 +159,8 @@ MonoBehaviour:
   - {fileID: 6689897565802709456, guid: 99f17a1b38d1a4059b37745eeea9c05a, type: 3}
   spawnRate: 5
   AvailableToys: []
+  time: {fileID: 0}
+  difficultyMultiplier: 0.017
 --- !u!1 &760928555796342904
 GameObject:
   m_ObjectHideFlags: 0

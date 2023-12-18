@@ -7,9 +7,11 @@ using TMPro;
 public class TimeUntilChristmasCountdown : MonoBehaviour
 {
 
-[SerializeField] private float totalTime = 300f;
+[SerializeField] public float totalTime = 300f;
 [SerializeField] private TextMeshProUGUI countdownTimerText;
 [SerializeField] private GameObject outOfTime;
+    public int minutes;
+    public int seconds;
 
     // Start is called before the first frame update
     void Start()
@@ -18,14 +20,14 @@ public class TimeUntilChristmasCountdown : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         // Ensure time doesn't go below zero
         totalTime = Mathf.Max(0, totalTime - Time.deltaTime);
 
         // Calculate minutes and seconds
-        int minutes = Mathf.FloorToInt(totalTime / 60);
-        int seconds = Mathf.FloorToInt(totalTime % 60);
+        minutes = Mathf.FloorToInt(totalTime / 60);
+        seconds = Mathf.FloorToInt(totalTime % 60);
 
         // Display the countdown
         countdownTimerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);

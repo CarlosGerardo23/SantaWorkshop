@@ -7,6 +7,8 @@ public class Spawner : MonoBehaviour
     [SerializeField] private GameObject[] toyParts;
     [SerializeField] private float spawnRate = 1.0f;
                      public List<GameObject> AvailableToys = new List<GameObject>();
+    [SerializeField] private TimeUntilChristmasCountdown time;
+    [SerializeField] private float difficultyMultiplier = .01f;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +21,22 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (time.minutes <=4)
+        {
+            spawnRate -= difficultyMultiplier * Time.deltaTime;
+
+        } else if (time.minutes <=3)
+        {
+            spawnRate -= difficultyMultiplier * Time.deltaTime;
+
+        } else if (time.minutes <=2)
+        {
+            spawnRate -= difficultyMultiplier * Time.deltaTime;
+
+        } else if (time.minutes <=1)
+        {
+            spawnRate -= difficultyMultiplier * Time.deltaTime;
+        }
     }
 
     IEnumerator SpawnToyParts()
