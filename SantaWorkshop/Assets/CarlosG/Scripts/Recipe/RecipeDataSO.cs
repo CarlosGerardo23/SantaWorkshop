@@ -4,14 +4,22 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Recipe")]
 public class RecipeDataSO : ScriptableObject
 {
-    [SerializeField] private ToyPartDataSO[] _toyPartsList;
+    [SerializeField] private RecipeToyPartData[] _toyPartsList;
     [SerializeField] private GameObject _prefabToy;
     [SerializeField] public Sprite _giftIcon;
+
+    private void OnEnable()
+    {
+        for (int i = 0; i < _toyPartsList.Length; i++)
+        {
+            _toyPartsList[i].IsSet=false;
+        }
+    }
     public bool IsRecipeDone()
     {
         for (int i = 0; i < _toyPartsList.Length; i++)
         {
-            if (!_toyPartsList[i].isSet)
+            if (!_toyPartsList[i].IsSet)
                 return false;
         }
         return true;
@@ -19,16 +27,18 @@ public class RecipeDataSO : ScriptableObject
     public void ResetRecipe()
     {
         for (int i = 0; i < _toyPartsList.Length; i++)
-            _toyPartsList[i].isSet = false;
+            _toyPartsList[i].IsSet = false;
     }
 
     public bool TryCheckItemRecipe(ToyPartDataSO data)
     {
         for (int i = 0; i < _toyPartsList.Length; i++)
         {
-            if (data.Name == _toyPartsList[i].Name)
+            if (_toyPartsList[i].IsSet)
+                continue;
+            if (data.Name == _toyPartsList[i].ToyName)
             {
-                data.isSet = true;
+                _toyPartsList[i].IsSet = true;
                 return true;
             }
         }
@@ -44,7 +54,7 @@ public class RecipeDataSO : ScriptableObject
         toy = null;
         try
         {
-            toy = _toyPartsList[index];
+            toy = _toyPartsList[index].Toy;
             return true;
         }
         catch

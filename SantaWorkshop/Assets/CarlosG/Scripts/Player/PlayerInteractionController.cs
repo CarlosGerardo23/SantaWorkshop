@@ -38,7 +38,11 @@ public class PlayerInteractionController : MonoBehaviour
         if (other.TryGetComponent(out IInteractable interactable))
         {
             Debug.Log($"Interactable detected {interactable.name}");
+            if (_currentInteractable != null)
+                _currentInteractable.MissInteraction();
+
             _currentInteractable = interactable;
+            _currentInteractable.CanInteract();
         }
     }
     private void OnTriggerExit(Collider other)
@@ -48,6 +52,7 @@ public class PlayerInteractionController : MonoBehaviour
             if (_currentInteractable == interactable)
             {
                 Debug.Log($"Interactable miss {interactable.name}");
+                _currentInteractable.MissInteraction();
                 _currentInteractable = null;
             }
         }

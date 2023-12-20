@@ -22,9 +22,9 @@ public class UIWorkStationController : MonoBehaviour
                 _icons[i].color = Color.white;
                 _icons[i].sprite = toy.Icon;
 
-                if (!_currentRecipeDataUI.ContainsKey(toy.Name))
+                if (!_currentRecipeDataUI.ContainsKey($"{toy.Name} {i}"))
                 {
-                    _currentRecipeDataUI.Add(toy.Name, _icons[i]);
+                    _currentRecipeDataUI.Add($"{toy.Name} {i}", _icons[i]);
                 }
             }
         }
@@ -34,9 +34,15 @@ public class UIWorkStationController : MonoBehaviour
 
     public void UpdateRecipeUI(string toyName)
     {
-        if (_currentRecipeDataUI.TryGetValue(toyName, out UnityEngine.UI.Image icon))
+        for (int i = 0; i < _icons.Length; i++)
         {
-            icon.color = _checkSuccedColor;
+            if (_currentRecipeDataUI.TryGetValue($"{toyName} {i}", out UnityEngine.UI.Image icon))
+            {
+                if (icon.color == _checkSuccedColor)
+                    continue;
+                icon.color = _checkSuccedColor;
+                return;
+            }
         }
     }
 

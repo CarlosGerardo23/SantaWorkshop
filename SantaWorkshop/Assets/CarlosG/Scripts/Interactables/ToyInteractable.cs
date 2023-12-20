@@ -11,6 +11,7 @@ public class ToyInteractable : IInteractable
     private Rigidbody _rigidBody;
     private void Start()
     {
+        _uiAnimator= GetComponentInChildren<Animator>();
         _meshRenderer = GetComponent<MeshRenderer>();
         _rigidBody = GetComponent<Rigidbody>();
     }

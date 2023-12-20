@@ -5,28 +5,25 @@ using UnityEngine;
 
 public class WorkStationController : IInteractable
 {
-    [SerializeField] private RecipeDataSO[] _recipe;
+    [SerializeField] private RecipesControllerSO _recipesController;
     [SerializeField] private Transform _toysParent;
     [SerializeField] private string _giftTag;
     private PlayerInteractionController _playerController;
     private UIWorkStationController _uiWorkStation;
     private bool _isReady;
-    [SerializeField] private RecipeDataSO _currentRecipe;
+    private RecipeDataSO _currentRecipe;
 
     private void Start()
     {
         _uiWorkStation = GetComponentInChildren<UIWorkStationController>();
-        _currentRecipe = _recipe[Random.Range(0, _recipe.Length)];
+        _currentRecipe = _recipesController.GetRecipe();
         _uiWorkStation.SetRecipe(_currentRecipe);
     }
     private void OnEnable()
     {
         _playerController = FindObjectOfType<PlayerInteractionController>();
     }
-    private void OnDisable()
-    {
-        _currentRecipe.ResetRecipe();
-    }
+
     public override void Interact(PlayerInteractionController player)
     {
         if (_currentRecipe.IsRecipeDone())
@@ -36,6 +33,11 @@ public class WorkStationController : IInteractable
             toy.transform.localScale = Vector3.one;
             toy.transform.SetParent(_toysParent);
             toy.transform.localPosition = Vector3.zero;
+            _currentRecipe.ResetRecipe();
+            RecipeDataSO temp = _currentRecipe;
+            _currentRecipe = _recipesController.GetRecipe();
+            _recipesController.RestRecipe(temp);
+            _uiWorkStation.SetRecipe(_currentRecipe);
 
             Debug.Log("Recipe is done");
         }
@@ -43,7 +45,7 @@ public class WorkStationController : IInteractable
 
     private void OnTriggerEnter(Collider other)
     {
-        if (_isReady|| other.CompareTag(_giftTag))
+        if (_isReady || other.CompareTag(_giftTag))
             return;
         if (other.TryGetComponent(out ToyInteractable toy))
         {
